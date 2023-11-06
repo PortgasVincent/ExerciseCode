@@ -1,5 +1,11 @@
 package main
 
+type ListNode struct {
+	Val  int
+	Next *ListNode
+}
+
+// 错误答案❌
 func addTwoNumbers1(l1 *ListNode, l2 *ListNode) *ListNode {
 	a := []int{}
 	b := []int{}
@@ -33,11 +39,11 @@ func addTwoNumbers1(l1 *ListNode, l2 *ListNode) *ListNode {
 
 	if lenA == lenB {
 		temp = a[0] + b[0]
-		
+
 	} else {
 		temp = a[0]
 	}
-	if temp >= 10{
+	if temp >= 10 {
 		add = true
 		temp = temp % 10
 	}
@@ -53,25 +59,25 @@ func addTwoNumbers1(l1 *ListNode, l2 *ListNode) *ListNode {
 			break
 		}
 		if i >= diff {
-			temp = a[i] + b[i - diff]
+			temp = a[i] + b[i-diff]
 		} else {
 			temp = a[i]
 		}
 		if add {
-			temp ++
+			temp++
 		}
-		if temp >= 10{
+		if temp >= 10 {
 			add = true
-			temp = temp%10
+			temp = temp % 10
 		} else {
 			add = false
 		}
 		r.Val = temp
-		
+
 	}
 	return res
 }
 
-func main2(){
+func main2() {
 
 }
